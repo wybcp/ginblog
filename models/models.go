@@ -3,6 +3,7 @@ package models
 import (
 	"fmt"
 	"log"
+	"time"
 
 	"github.com/spf13/viper"
 
@@ -13,9 +14,11 @@ import (
 
 var db *gorm.DB
 
+// Model 基础模型
 type Model struct {
-	ID         int `gorm:"primary_key" json:"id"`
-	CreatedAt  int `json:"created_at"`
+	ID int `gorm:"primary_key" json:"id"`
+	// CreatedAt  int `json:"created_at"`
+	CreatedAt time.Time `json:"created_at" time_format:"20060102150405"`
 	// ModifiedAt int `json:"modified_at"`
 }
 
@@ -45,7 +48,7 @@ func init() {
 	gorm.DefaultTableNameHandler = func(db *gorm.DB, defaultTableName string) string {
 		return tablePrefix + defaultTableName
 	}
-
+	// 数据库表名 单数
 	db.SingularTable(true)
 	db.DB().SetMaxIdleConns(10)
 	db.DB().SetMaxOpenConns(100)
