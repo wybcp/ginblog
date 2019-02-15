@@ -56,17 +56,6 @@ func GetArticleTotal(maps interface{}) (count int) {
 	return
 }
 
-// // ExistArticleByName 是否有相同的文章
-// func ExistArticleByName(name string) bool {
-// 	var Article Article
-// 	db.Select("id").Where("name = ?", name).First(&Article)
-// 	if Article.ID > 0 {
-// 		return true
-// 	}
-
-// 	return false
-// }
-
 // CreateArticle 创建新文章
 func CreateArticle(data map[string]interface{}) bool {
 	db.Create(&Article{

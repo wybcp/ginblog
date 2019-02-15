@@ -3,14 +3,14 @@ package main
 import (
 	"context"
 	"fmt"
+	"ginblog/config"
+	_ "ginblog/docs"
 	"ginblog/routers"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"time"
-
-	"ginblog/config"
 )
 
 func main() {
