@@ -10,6 +10,7 @@ import (
 	"ginblog/pkg/util"
 )
 
+// JWT jwt中间件
 func JWT() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var code int
