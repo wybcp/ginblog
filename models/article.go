@@ -24,15 +24,15 @@ type Article struct {
 
 // BeforeCreate 创建Article时设置更新时间，创建时间
 func (Article *Article) BeforeCreate(scope *gorm.Scope) error {
-	scope.SetColumn("CreatedAt", time.Now().Unix())
+	err:=scope.SetColumn("CreatedAt", time.Now().Unix())
 	scope.SetColumn("UpdatedAt", time.Now().Unix())
-	return nil
+	return err
 }
 
 // BeforeUpdate 更新Article时设置更新时间
 func (Article *Article) BeforeUpdate(scope *gorm.Scope) error {
-	scope.SetColumn("UpdatedAt", time.Now().Unix())
-	return nil
+	err:=scope.SetColumn("UpdatedAt", time.Now().Unix())
+	return err
 }
 
 // GetArticles 获取需要的文章

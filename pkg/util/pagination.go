@@ -6,6 +6,7 @@ import (
 	"github.com/Unknwon/com"
 	"github.com/gin-gonic/gin"
 )
+
 // GetPage 获取页面
 func GetPage(c *gin.Context) int {
 	result := 0

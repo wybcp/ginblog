@@ -1,10 +1,12 @@
 package models
+
 // Auth 授权结构
 type Auth struct {
 	ID       int    `gorm:"primary_key" json:"id"`
 	Username string `json:"username"`
 	Password string `json:"password"`
 }
+
 // CheckAuth 验证授权
 func CheckAuth(username, password string) bool {
 	var auth Auth

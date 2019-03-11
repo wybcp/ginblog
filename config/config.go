@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/fsnotify/fsnotify"
@@ -50,8 +51,9 @@ func LoadApp() {
 func init() {
 
 	// 初始化日志包
-	// c.initLog()
-	initConfig()
+	if err:=initConfig();err!=nil{
+		log.Fatalf("初始化配置文件失败:%v",err)
+	}
 	LoadBase()
 	LoadServer()
 	LoadApp()

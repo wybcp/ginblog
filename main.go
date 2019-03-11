@@ -15,7 +15,6 @@ import (
 
 func main() {
 	router := routers.InitRouter()
-	// router.GET("/health-dataapi", dataapi.GetDataAPIHealthHandler)
 
 	s := &http.Server{
 		Addr:           fmt.Sprintf(":%d", config.HTTPPort),
